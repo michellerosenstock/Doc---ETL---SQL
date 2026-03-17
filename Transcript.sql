@@ -1,0 +1,4 @@
+--create an SQL database consisting of 1 table
+  --table has no data initially.
+  --table has year, course code, course title, credit grade columns
+--fill in the data using the values in a csv file.
