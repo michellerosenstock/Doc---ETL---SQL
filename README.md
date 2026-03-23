@@ -2,7 +2,7 @@
 
 **Overview**
 
-Building a small ETL program to transform a PDF into an SQL table. 
+Building a small ETL and ELT program to transform a PDF into an SQL table. 
 
 Working Architecture: 
 PDF --> Python Transformation --> CSV file --> Load to SQL Staging Table --> SQL Cleaned Table
