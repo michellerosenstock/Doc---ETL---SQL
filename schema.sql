@@ -1,0 +1,2 @@
+CREATE database Transformation;
+CREATE SCHEMA tRANSCRIPT_SCHEMA;
