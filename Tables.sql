@@ -2,3 +2,8 @@
 --load csv into table
 
 --using this video as a resource: https://www.youtube.com/watch?v=7LtwHSilDfU
+
+CREATE TABLE Tranformation.Transcriptions (
+    id SERIAL PRIMARY KEY,
+    --- table fields.
+);
