@@ -1,0 +1,2 @@
+--not sure what to do. deleted my previous coce.
+--load csv into table
