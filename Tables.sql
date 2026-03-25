@@ -3,7 +3,8 @@
 
 --using this video as a resource: https://www.youtube.com/watch?v=7LtwHSilDfU
 
-CREATE TABLE Tranformation.Transcriptions (
+CREATE SCHEMA Student;
+CREATE TABLE Student.Transcript (
     id SERIAL PRIMARY KEY,
     --- table fields.
 );
