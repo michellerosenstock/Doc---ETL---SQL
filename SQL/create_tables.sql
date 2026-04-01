@@ -1,4 +1,4 @@
-create TABLE IF NOT EXISTS Transform_TranscriptDB_schema.Transcript (
+create TABLE IF NOT EXISTS transform_transcriptdb_schema.transcript (
     id BIGINT GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     course_title TEXT NOT NULL,
     course_code INT NOT NULL CHECK (course_code > 0 AND course_code < 10000),

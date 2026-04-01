@@ -3,3 +3,4 @@
 --normalizes the data.
 --outputs the data into a cleaned table.
 
+SELECT * FROM Transform_TranscriptDB_schema.Transcript;

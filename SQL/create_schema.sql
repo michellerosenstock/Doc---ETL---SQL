@@ -1,1 +1,1 @@
-CREATE SCHEMA Transform_TranscriptDB_schema if not exists;
+CREATE SCHEMA transform_transcriptdb_schema if not exists;
