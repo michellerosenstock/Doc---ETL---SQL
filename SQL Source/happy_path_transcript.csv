@@ -1,0 +1,31 @@
+course_title|course_code|year_completed|credit|grade
+Introduction to Programming|CS101|2021|3|A
+Object-Oriented Programming|CS102|2021|3|A-
+Computer Systems Fundamentals|CS103|2021|3|B+
+Discrete Mathematics|MATH120|2021|3|A-
+Calculus I|MATH101|2021|4|B
+Data Structures|CS201|2022|3|A
+Algorithms I|CS202|2022|3|A-
+Database Systems|CS220|2022|3|A
+Statistics for Data Science|STAT210|2022|3|A-
+Linear Algebra|MATH220|2022|3|B+
+Software Engineering Principles|CS230|2022|3|A
+Operating Systems|CS240|2023|3|B+
+Computer Networks|CS241|2023|3|B
+Algorithms II|CS301|2023|3|A-
+Data Engineering Foundations|DE300|2023|3|A
+SQL and Relational Theory|DE310|2023|3|A
+Cloud Computing Basics|CS320|2023|3|B+
+ETL Pipeline Design|DE320|2023|3|A
+Machine Learning Intro|DS330|2024|3|A-
+Big Data Systems|DE400|2024|3|A
+Advanced SQL Optimization|DE410|2024|3|A
+Data Warehousing Concepts|DE420|2024|3|A-
+Distributed Systems|CS410|2024|3|B+
+Capstone Project I|CS490|2024|3|A
+Capstone Project II|CS491|2024|4|A
+Data Visualization|DS340|2024|3|A-
+Applied Data Science|DS350|2024|3|A
+Information Security Basics|CS330|2024|3|B+
+Technical Writing for Engineers|ENG210|2023|3|A-
+Professional Ethics in Tech|GEN101|2024|2|A
