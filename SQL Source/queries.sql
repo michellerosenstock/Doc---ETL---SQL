@@ -3,4 +3,15 @@
 --normalizes the data.
 --outputs the data into a cleaned table.
 
-SELECT * FROM transform_transcriptdb_schema.transcript;
+CREATE TABLE transcripts_raw (
+    id SERIAL PRIMARY KEY,
+    file_name TEXT,
+    pdf_data BYTEA
+);
+
+INSERT INTO transcripts_raw (file_name, pdf_data)
+VALUES (
+    'transcript.pdf',
+    pg_read_binary_file('~/Desktop/Doc---ETL---SQL/transcript.pdf')
+);
+
