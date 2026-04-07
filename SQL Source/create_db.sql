@@ -1,1 +1,1 @@
-CREATE DATABASE IF NOT EXISTS transform_transcriptdb;
+CREATE DATABASE transform_transcriptdb;
