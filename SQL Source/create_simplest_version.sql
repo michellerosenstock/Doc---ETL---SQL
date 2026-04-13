@@ -1,8 +1,8 @@
-CREATE DATABASE transform_transcriptdb;
+CREATE DATABASE transform_transcriptdb IF NOT EXISTS;
 
-CREATE SCHEMA transform_transcriptdb_schema if not exists;
+CREATE SCHEMA transform_transcriptdb_schema IF NOT EXISTS;
 
-create TABLE  transform_transcriptdb_schema.transcript (
+CREATE TABLE  transform_transcriptdb_schema.transcript IF NOT EXISTS (
     id BIGINT GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     course_title TEXT NOT NULL,
     course_code INT NOT NULL CHECK (course_code > 0 AND course_code < 10000),
