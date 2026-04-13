@@ -2,7 +2,7 @@ CREATE DATABASE transform_transcriptdb;
 
 CREATE SCHEMA transform_transcriptdb_schema;
 
-create TABLE  transform_transcriptdb_schema.transcript (
+create TABLE  transform_transcriptdb.transcript (
     id BIGINT GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     course_title TEXT NOT NULL,
     course_code INT NOT NULL CHECK (course_code > 0 AND course_code < 10000),
@@ -12,7 +12,7 @@ create TABLE  transform_transcriptdb_schema.transcript (
     
 )
 
-insert into transform_transcriptdb_schema.transcript
+insert into transform_transcriptdb.transcript
 
     (course_title, course_code, year_completed, credit, grade) values
     ('Introduction to Computer Science', 101, 2020, 3.00, 'A'),
@@ -26,6 +26,6 @@ insert into transform_transcriptdb_schema.transcript
     ('Linear Algebra', 402, 2023, 3.00, 'B+'),
     ('Statistics', 502, 2024, 3.00, 'A'),
     ('Artificial Intelligence', 601, 2024, 3.00, 'A');
-    
 
-SELECT * FROM transform_transcriptdb_schema.transcript;
+
+SELECT * FROM transform_transcriptdb.transcript;
