@@ -11,7 +11,7 @@ CREATE TABLE  transform_transcriptdb_schema.transcript IF NOT EXISTS (
     grade VARCHAR(2) NOT NULL CHECK (grade IN ('A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'))
 );
 
-insert into transform_transcriptdb_schema.transcript (course_title, course_code, year_completed, credit, grade) values
+INSERT INTO transform_transcriptdb_schema.transcript (course_title, course_code, year_completed, credit, grade) values
     ('Introduction to Computer Science', 101, 2020, 3.00, 'A'),
     ('Data Structures', 201, 2021, 3.00, 'B+'),
     ('Algorithms', 301, 2022, 3.00, 'A-'),
