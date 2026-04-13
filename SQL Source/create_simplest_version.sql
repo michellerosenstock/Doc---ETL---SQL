@@ -1,20 +1,17 @@
 CREATE DATABASE transform_transcriptdb;
 
-CREATE SCHEMA transform_transcriptdb_schema;
+CREATE SCHEMA transform_transcriptdb_schema if not exists;
 
-create TABLE  transform_transcriptdb.transcript (
+create TABLE  transform_transcriptdb_schema.transcript (
     id BIGINT GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     course_title TEXT NOT NULL,
     course_code INT NOT NULL CHECK (course_code > 0 AND course_code < 10000),
     year_completed INT NOT NULL CHECK (year_completed BETWEEN 1600 AND 2500),
     credit DECIMAL(5,2),
-    grade VARCHAR(2) NOT NULL CHECK (grade IN ('A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F')),
-    
-)
+    grade VARCHAR(2) NOT NULL CHECK (grade IN ('A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'))
+);
 
-insert into transform_transcriptdb.transcript
-
-    (course_title, course_code, year_completed, credit, grade) values
+insert into transform_transcriptdb_schema.transcript (course_title, course_code, year_completed, credit, grade) values
     ('Introduction to Computer Science', 101, 2020, 3.00, 'A'),
     ('Data Structures', 201, 2021, 3.00, 'B+'),
     ('Algorithms', 301, 2022, 3.00, 'A-'),
@@ -28,4 +25,4 @@ insert into transform_transcriptdb.transcript
     ('Artificial Intelligence', 601, 2024, 3.00, 'A');
 
 
-SELECT * FROM transform_transcriptdb.transcript;
+SELECT * FROM transform_transcriptdb_schema.transcript;
