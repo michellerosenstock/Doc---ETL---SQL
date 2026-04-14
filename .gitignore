@@ -1,0 +1,9 @@
+# 1. THE VAULT
+.env
+
+# 2. THE LOCAL 
+.DS_Store
+*.log
+
+# 3. THE TOOL CACHE
+.vscode/
