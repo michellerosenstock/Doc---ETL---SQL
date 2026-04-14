@@ -1,0 +1,1 @@
+SELECT * FROM transform_transcriptdb_schema.transcript;
