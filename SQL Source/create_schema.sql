@@ -1,0 +1,1 @@
+CREATE SCHEMA IF NOT EXISTS transform_transcriptdb_schema;
