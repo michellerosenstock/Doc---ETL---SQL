@@ -1,0 +1,2 @@
+--common table expression
+--store the AI-generated 
