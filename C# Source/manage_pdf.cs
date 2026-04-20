@@ -1,10 +1,10 @@
 using System;
-using System.IO;
+
 
 // a source on reading PDFs in C#: https://dev.to/eliotjones/reading-a-pdf-in-c-on-net-core-43ef
 
 
-class main_Class {
+class Main_Class {
 
 /*
 input: pdf file object
@@ -17,18 +17,18 @@ else return false
 */
 
 
-public static void main (){
+public static void Main(string[] args){
 
 
   bool pdfExists = false;
-  String pdf = "sample_pdf.pdf"
+  String pdf = "sample_pdf.pdf";
 
-  if (PDF != null){
+  if (pdf != null){
     pdfExists = true;
   }
  
   
-  System.console("Does PDF exist?" + pdfExists)
+ Console.WriteLine("Does PDF exist? " + pdfExists);
     
     }
 
