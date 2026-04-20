@@ -1,5 +1,7 @@
 using System;
-using System.io;
+using System.IO;
+
+class main_Class{
 
 /*
 input: pdf file object
@@ -10,8 +12,14 @@ if PDF exists, return true
 else return false
 
 */
+
+
 public static void main (){
 
+
+  bool fileExists = false;
   System.console(
 "Hello world"  
 }
+
+    }
