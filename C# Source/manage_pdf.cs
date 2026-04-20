@@ -1,6 +1,9 @@
 using System;
 using System.IO;
 
+// a source on reading PDFs in C#: https://dev.to/eliotjones/reading-a-pdf-in-c-on-net-core-43ef
+
+
 class main_Class {
 
 /*
