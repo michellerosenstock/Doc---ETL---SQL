@@ -17,7 +17,7 @@ else return false
 */
 
 
-public static void Main(string[] args){
+static void Main(string[] args){
 
 
   bool pdfExists = false;
