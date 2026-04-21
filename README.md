@@ -5,17 +5,7 @@
 Building a small ETL and ELT program to transform a PDF into an SQL table. 
 
 Working Architecture: 
-PDF --> Python Transformation --> CSV file --> Load to SQL Staging Table --> SQL Cleaned Table
-
-Stage 0: AI-generated PDF Transcript. Frankenstein's Transcript.
-
-Stage 1: ETL: Extract --> Transform --> Load
-
-PDF --> Python Transformation --> CSV file
-
-Stage 2: ELT: Extract --> Load --> Transform
-
-CSV file --> Load to SQL Staging Table --> SQL Final Table
+PDF --> C# Transformation --> CSV file --> Load to SQL Staging Table --> SQL Cleaned Table
 
 Starting small. For now, starting with a single program and a single SQL table in a local PosgreSQL database. This project may expand or change direction based on challenges, opportunities, and feedback.  
 
