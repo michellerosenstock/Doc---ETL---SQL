@@ -4,6 +4,7 @@
 # 2. THE LOCAL 
 .DS_Store
 *.log
+appsettings.json
 
 # 3. THE TOOL CACHE
 .vscode/
