@@ -1,6 +1,6 @@
 # 1. THE VAULT
 .env
-dir_to_ignore
+
 
 # 2. THE LOCAL 
 .DS_Store
