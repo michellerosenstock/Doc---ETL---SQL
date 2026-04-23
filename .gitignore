@@ -7,3 +7,6 @@
 
 # 3. THE TOOL CACHE
 .vscode/
+
+# 4. OTHER CONFIG
+*.json
