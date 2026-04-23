@@ -8,7 +8,7 @@
   -->
 
   <PropertyGroup>
-    <!-- Target a range so users can build/run with older or newer SDKs -->
+    <!-- Target 10.0. cannot include the prior ones right now. -->
    <TargetFrameworks>net10.0</TargetFrameworks>
 
     <!-- Language modernity (compiler will do the right thing per SDK) -->
