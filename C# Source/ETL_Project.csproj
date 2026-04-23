@@ -1,0 +1,102 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Doc-eTL.csproj
+    - Broad multi-targeting so consumers can build with the highest framework available to them.
+    - Keeps Windows TargetPlatform settings optional to avoid build errors on non-Windows or machines without that SDK.
+    - Floating package versions ("*") restore latest stable package versions (non-reproducible by design).
+  -->
+
+  <PropertyGroup>
+    <!-- Target a range so users can build/run with older or newer SDKs -->
+   <TargetFrameworks>net10.0</TargetFrameworks>
+
+    <!-- Language modernity (compiler will do the right thing per SDK) -->
+    <LangVersion>latest</LangVersion>
+
+    <!-- Cross-platform runtime identifiers for publish -->
+    <RuntimeIdentifiers>win-x64;linux-x64;osx-x64;osx-arm64</RuntimeIdentifiers>
+
+    <!-- Conservative publish defaults for development -->
+    <PublishTrimmed>false</PublishTrimmed>
+    <PublishSingleFile>false</PublishSingleFile>
+
+    <!-- Allow floating package resolution (latest stable). Consider locking later for reproducible builds. -->
+    <RestorePackagesWithLockFile>false</RestorePackagesWithLockFile>
+
+    <!-- Project identity -->
+    <AssemblyName>Doc-eTL</AssemblyName>
+    <RootNamespace>DocETL</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Opt-in Windows target platform. This avoids requiring a Windows SDK on every machine.
+       To enable, build with: dotnet build /p:UseWindowsTargetPlatform=true
+       You can also set UseWindowsTargetPlatform in a CI job or local msbuild invocation. -->
+  <PropertyGroup Condition="'$(UseWindowsTargetPlatform)' == 'true'">
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.203</TargetPlatformVersion>
+  </PropertyGroup>
+
+  <!-- Enable Nullable and ImplicitUsings only for frameworks that support them (net6.0+) -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0' Or '$(TargetFramework)' == 'net7.0' Or '$(TargetFramework)' == 'net8.0'">
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Hosting & DI (generic host for console/worker/cloud) -->
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="*" />
+
+    <!-- PostgreSQL access -->
+    <PackageReference Include="Npgsql" Version="*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="*" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="*" />
+
+    <!-- Lightweight data mapping -->
+    <PackageReference Include="Dapper" Version="*" />
+
+    <!-- Transformation & parsing -->
+    <PackageReference Include="Newtonsoft.Json" Version="*" />
+    <PackageReference Include="CsvHelper" Version="*" />
+
+    <!-- Logging -->
+    <PackageReference Include="Serilog" Version="*" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="*" />
+    <PackageReference Include="Serilog.Sinks.File" Version="*" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="*" />
+
+    <!-- Resilience & transient-fault handling -->
+    <PackageReference Include="Polly" Version="*" />
+  </ItemGroup>
+
+  <!-- Optional publish profiles (invoke with /p:PublishProfile=Desktop or Cloud) -->
+  <PropertyGroup Condition="'$(PublishProfile)' == 'Desktop'">
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>false</PublishTrimmed>
+    <SelfContained>true</SelfContained>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(PublishProfile)' == 'Cloud'">
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <PublishTrimmed>false</PublishTrimmed>
+  </PropertyGroup>
+
+  <!-- Copy configuration + mappings into output -->
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+
+    <!-- Include all files under mappings/ (recursive) and copy them to output -->
+    <Content Include="mappings\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
